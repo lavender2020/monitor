@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date    : 2017-05-16 11:09:34
-# @Author  : liutongsheng@hujiang.com
+# @Author  : lavendergeng@gmail.com
 
 import os
 import sys
