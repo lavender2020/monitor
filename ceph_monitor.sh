@@ -2,8 +2,8 @@
 
 #define
 ZB_COM="/usr/local/zabbix/bin/zabbix_sender"
-ZB_SERVER_IP="10.10.80.136"
-ZB_HOSTNAME="wx-ceph-p70-167.hjidc.com"
+ZB_SERVER_IP="$ip_zabbix_server"
+ZB_HOSTNAME="$hostname_script"
 
 #define monitor command
 health=`ceph health |awk '{print $1}'`
