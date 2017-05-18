@@ -41,9 +41,9 @@ with open(ceph_txt, 'r') as f:
     ceph_sender=''
     for line in f.readlines():
         line_lst = (line.strip()).split(':')
-        ceph_sender =ceph_sender+ '"wx-ceph-p70-167.hjidc.com"' + ' ' + 'ceph.' + str(line_lst[0]) + ' ' + str(set_unit(line_lst[1]))+'\n'
+        ceph_sender =ceph_sender+ '"$hostname_script"' + ' ' + 'ceph.' + str(line_lst[0]) + ' ' + str(set_unit(line_lst[1]))+'\n'
     with open(basepath + '/ceph_sender.txt','w') as f:
         f.write(ceph_sender)
 
-cmd = r"/usr/local/zabbix/bin/zabbix_sender -z 10.10.80.136 -i %s"%(basepath + '/ceph_sender.txt')
+cmd = r"/usr/local/zabbix/bin/zabbix_sender -z $ip_zabbix_server -i %s"%(basepath + '/ceph_sender.txt')
 subprocess.call(cmd, shell=True)
